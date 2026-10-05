@@ -1,0 +1,39 @@
+{
+  "accessed": "2026-10-05",
+  "data": [
+    {
+      "resource": "TCGA",
+      "gdc_project": "TCGA",
+      "url": "https://portal.gdc.cancer.gov/projects/TCGA"
+    },
+    {
+      "resource": "CPTAC-3",
+      "gdc_project": "CPTAC-3",
+      "url": "https://portal.gdc.cancer.gov/projects/CPTAC-3"
+    },
+    {
+      "resource": "GDC documentation",
+      "url": "https://docs.gdc.cancer.gov/"
+    }
+  ],
+  "local_manifest": "data/tcga_cptac_manifest.json",
+  "processed_labels": "data/tmb_labels.csv",
+  "checksums": "experiments/confirmatory_checksums.sha256",
+  "protocol": "experiments/confirmatory_decision_ledger.md",
+  "public_archive": "https://github.com/jinluo12345/tcga-cptac-wmb-transport",
+  "doi": null,
+  "controlled_access": false,
+  "release_checksums": "experiments/release_checksums.sha256",
+  "environment": "experiments/environment.txt",
+  "figure_sources": "src/plot_tmb_figures.py",
+  "analysis_sources": [
+    "src/analyze_tmb_results.py",
+    "src/run_tmb_transductive_cpu_baseline.py"
+  ],
+  "split_case_lists": "results/tmb_confirmatory_gpu/external_predictions.csv",
+  "runtime": "experiments/runtime_manifest.json",
+  "reference_audit": "experiments/reference_validation_final.json",
+  "superseded_material": "experiments/archive_superseded/README.md",
+  "local_release_bundle": "experiments/release_bundle.tar.gz",
+  "local_release_bundle_checksum": "experiments/release_bundle.sha256"
+}

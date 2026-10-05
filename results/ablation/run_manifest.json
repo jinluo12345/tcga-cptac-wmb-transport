@@ -1,0 +1,21 @@
+{
+  "seeds": [
+    11,
+    23,
+    47
+  ],
+  "variants": [
+    "mlp_no_domain",
+    "hetero_no_domain",
+    "hetero_domain",
+    "homo_domain"
+  ],
+  "epochs": 50,
+  "batch_size": 128,
+  "target_split": "50/50 adaptation/evaluation random_state=seed+9000",
+  "source_development": "80/20 train/calibration random_state=seed",
+  "source_refit": "all source patients fixed epochs",
+  "preprocessing": "development-train mean/std frozen",
+  "calibration": "development checkpoint held-out source calibration only",
+  "target_labels_used_for_fit": false
+}

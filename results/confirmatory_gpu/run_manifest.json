@@ -1,0 +1,25 @@
+{
+  "seeds": [
+    11,
+    23,
+    47
+  ],
+  "epochs": 50,
+  "batch_size": 128,
+  "directions": [
+    [
+      "TCGA",
+      "CPTAC"
+    ],
+    [
+      "CPTAC",
+      "TCGA"
+    ]
+  ],
+  "model": "assay_aware_heteroscedastic",
+  "target_split": "50/50 adaptation/evaluation, random_state=seed+9000",
+  "source_refit": "all source patients for final point predictor",
+  "development_calibration": "20% source calibration held out from development checkpoint; frozen scale reused for final all-source refit",
+  "preprocessing": "development-train mean/std frozen for both development and final refit",
+  "target_labels_used_for_fit": false
+}

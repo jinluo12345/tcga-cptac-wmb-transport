@@ -1,0 +1,1030 @@
+{
+  "TCGA_to_CPTAC": {
+    "n_external": 1536,
+    "n_attribution_samples_per_seed": [
+      512,
+      512,
+      512
+    ],
+    "top_abs": [
+      {
+        "gene_id": "ENSG00000172377",
+        "mean_abs_attribution": 0.05012502148747444,
+        "mean_signed_attribution": 0.04702155664563179,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000159915",
+        "mean_abs_attribution": 0.04807448759675026,
+        "mean_signed_attribution": -0.0478086955845356,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000167359",
+        "mean_abs_attribution": 0.046354591846466064,
+        "mean_signed_attribution": 0.04586702212691307,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000184270",
+        "mean_abs_attribution": 0.03871181607246399,
+        "mean_signed_attribution": 0.038710299879312515,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000196604",
+        "mean_abs_attribution": 0.03868536278605461,
+        "mean_signed_attribution": 0.029314087703824043,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000196553",
+        "mean_abs_attribution": 0.037797391414642334,
+        "mean_signed_attribution": 0.037693869322538376,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000172640",
+        "mean_abs_attribution": 0.03588329628109932,
+        "mean_signed_attribution": 0.035221293568611145,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000124610",
+        "mean_abs_attribution": 0.03517701104283333,
+        "mean_signed_attribution": 0.035092975944280624,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000185013",
+        "mean_abs_attribution": 0.03467583656311035,
+        "mean_signed_attribution": -0.03388332948088646,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000174417",
+        "mean_abs_attribution": 0.03431262820959091,
+        "mean_signed_attribution": 0.034034647047519684,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000057468",
+        "mean_abs_attribution": 0.03386731818318367,
+        "mean_signed_attribution": 0.033317502588033676,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000172365",
+        "mean_abs_attribution": 0.0316779725253582,
+        "mean_signed_attribution": -0.022218013182282448,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000170160",
+        "mean_abs_attribution": 0.029978251084685326,
+        "mean_signed_attribution": -0.02872396819293499,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000185261",
+        "mean_abs_attribution": 0.028710708022117615,
+        "mean_signed_attribution": -0.028580019250512123,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000184357",
+        "mean_abs_attribution": 0.028596535325050354,
+        "mean_signed_attribution": 0.028596535325050354,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000188996",
+        "mean_abs_attribution": 0.02760394848883152,
+        "mean_signed_attribution": 0.027374684810638428,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000135517",
+        "mean_abs_attribution": 0.026192137971520424,
+        "mean_signed_attribution": 0.025549039244651794,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000101639",
+        "mean_abs_attribution": 0.025990739464759827,
+        "mean_signed_attribution": -0.025817155838012695,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000185689",
+        "mean_abs_attribution": 0.02505306713283062,
+        "mean_signed_attribution": -0.02483990788459778,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000178567",
+        "mean_abs_attribution": 0.0249918382614851,
+        "mean_signed_attribution": -0.019055403769016266,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000168131",
+        "mean_abs_attribution": 0.023972099646925926,
+        "mean_signed_attribution": 0.02355179749429226,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000127366",
+        "mean_abs_attribution": 0.02374892868101597,
+        "mean_signed_attribution": 0.02347605675458908,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000180596",
+        "mean_abs_attribution": 0.023575181141495705,
+        "mean_signed_attribution": 0.02356916107237339,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000063438",
+        "mean_abs_attribution": 0.023422079160809517,
+        "mean_signed_attribution": 0.021322079002857208,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000138755",
+        "mean_abs_attribution": 0.022822754457592964,
+        "mean_signed_attribution": -0.0026633732486516237,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000157999",
+        "mean_abs_attribution": 0.021881690248847008,
+        "mean_signed_attribution": 0.021840775385499,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000029639",
+        "mean_abs_attribution": 0.021205341443419456,
+        "mean_signed_attribution": -0.01989702135324478,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000163806",
+        "mean_abs_attribution": 0.021169869229197502,
+        "mean_signed_attribution": 0.021008260548114777,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000184166",
+        "mean_abs_attribution": 0.021030167117714882,
+        "mean_signed_attribution": 0.019078219309449196,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000171217",
+        "mean_abs_attribution": 0.0207858607172966,
+        "mean_signed_attribution": 0.020761465653777122,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000173431",
+        "mean_abs_attribution": 0.02057746984064579,
+        "mean_signed_attribution": -0.019563661888241768,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000177947",
+        "mean_abs_attribution": 0.020004523918032646,
+        "mean_signed_attribution": 0.019972993060946465,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000196811",
+        "mean_abs_attribution": 0.019994018599390984,
+        "mean_signed_attribution": -0.019947988912463188,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000172123",
+        "mean_abs_attribution": 0.019956598058342934,
+        "mean_signed_attribution": -0.01871386356651783,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000176681",
+        "mean_abs_attribution": 0.01979677937924862,
+        "mean_signed_attribution": -0.019522493705153465,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000179909",
+        "mean_abs_attribution": 0.01965141110122204,
+        "mean_signed_attribution": -0.019305730238556862,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000144771",
+        "mean_abs_attribution": 0.019402554258704185,
+        "mean_signed_attribution": -0.016536666080355644,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000184735",
+        "mean_abs_attribution": 0.019336991012096405,
+        "mean_signed_attribution": 0.016846539452672005,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000121988",
+        "mean_abs_attribution": 0.019218308851122856,
+        "mean_signed_attribution": -0.018940666690468788,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000121211",
+        "mean_abs_attribution": 0.019138174131512642,
+        "mean_signed_attribution": 0.018863854929804802,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000172014",
+        "mean_abs_attribution": 0.019051291048526764,
+        "mean_signed_attribution": -0.016586733981966972,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000175820",
+        "mean_abs_attribution": 0.018991569057106972,
+        "mean_signed_attribution": -0.018619859591126442,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000182308",
+        "mean_abs_attribution": 0.018841659650206566,
+        "mean_signed_attribution": 0.01829618029296398,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000180919",
+        "mean_abs_attribution": 0.01874787174165249,
+        "mean_signed_attribution": -0.014358364045619965,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000189180",
+        "mean_abs_attribution": 0.018667979165911674,
+        "mean_signed_attribution": -0.01694687083363533,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000148377",
+        "mean_abs_attribution": 0.01808186247944832,
+        "mean_signed_attribution": 0.016955770552158356,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000121314",
+        "mean_abs_attribution": 0.018074868246912956,
+        "mean_signed_attribution": -0.017220595851540565,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000183066",
+        "mean_abs_attribution": 0.018064148724079132,
+        "mean_signed_attribution": 0.01667252741754055,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000163046",
+        "mean_abs_attribution": 0.01802103966474533,
+        "mean_signed_attribution": -0.012292981147766113,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000134291",
+        "mean_abs_attribution": 0.017814090475440025,
+        "mean_signed_attribution": -0.012418369762599468,
+        "sign_consistency": 1.0
+      }
+    ],
+    "top_positive": [
+      {
+        "gene_id": "ENSG00000172377",
+        "mean_signed_attribution": 0.04702155664563179,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000167359",
+        "mean_signed_attribution": 0.04586702212691307,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000184270",
+        "mean_signed_attribution": 0.038710299879312515,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000196553",
+        "mean_signed_attribution": 0.037693869322538376,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000172640",
+        "mean_signed_attribution": 0.035221293568611145,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000124610",
+        "mean_signed_attribution": 0.035092975944280624,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000174417",
+        "mean_signed_attribution": 0.034034647047519684,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000057468",
+        "mean_signed_attribution": 0.033317502588033676,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000196604",
+        "mean_signed_attribution": 0.029314087703824043,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000184357",
+        "mean_signed_attribution": 0.028596535325050354,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000188996",
+        "mean_signed_attribution": 0.027374684810638428,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000135517",
+        "mean_signed_attribution": 0.025549039244651794,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000180596",
+        "mean_signed_attribution": 0.02356916107237339,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000168131",
+        "mean_signed_attribution": 0.02355179749429226,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000127366",
+        "mean_signed_attribution": 0.02347605675458908,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000157999",
+        "mean_signed_attribution": 0.021840775385499,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000063438",
+        "mean_signed_attribution": 0.021322079002857208,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000163806",
+        "mean_signed_attribution": 0.021008260548114777,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000171217",
+        "mean_signed_attribution": 0.020761465653777122,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000177947",
+        "mean_signed_attribution": 0.019972993060946465,
+        "sign_consistency": 1.0
+      }
+    ],
+    "top_negative": [
+      {
+        "gene_id": "ENSG00000159915",
+        "mean_signed_attribution": -0.0478086955845356,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000185013",
+        "mean_signed_attribution": -0.03388332948088646,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000170160",
+        "mean_signed_attribution": -0.02872396819293499,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000185261",
+        "mean_signed_attribution": -0.028580019250512123,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000101639",
+        "mean_signed_attribution": -0.025817155838012695,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000185689",
+        "mean_signed_attribution": -0.02483990788459778,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000172365",
+        "mean_signed_attribution": -0.022218013182282448,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000196811",
+        "mean_signed_attribution": -0.019947988912463188,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000029639",
+        "mean_signed_attribution": -0.01989702135324478,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000173431",
+        "mean_signed_attribution": -0.019563661888241768,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000176681",
+        "mean_signed_attribution": -0.019522493705153465,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000179909",
+        "mean_signed_attribution": -0.019305730238556862,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000178567",
+        "mean_signed_attribution": -0.019055403769016266,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000121988",
+        "mean_signed_attribution": -0.018940666690468788,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000172123",
+        "mean_signed_attribution": -0.01871386356651783,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000175820",
+        "mean_signed_attribution": -0.018619859591126442,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000121314",
+        "mean_signed_attribution": -0.017220595851540565,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000196778",
+        "mean_signed_attribution": -0.0170219037681818,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000189180",
+        "mean_signed_attribution": -0.01694687083363533,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000172014",
+        "mean_signed_attribution": -0.016586733981966972,
+        "sign_consistency": 1.0
+      }
+    ]
+  },
+  "CPTAC_to_TCGA": {
+    "n_external": 1536,
+    "n_attribution_samples_per_seed": [
+      512,
+      512,
+      512
+    ],
+    "top_abs": [
+      {
+        "gene_id": "ENSG00000184270",
+        "mean_abs_attribution": 0.028918689116835594,
+        "mean_signed_attribution": -0.028487006202340126,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000179909",
+        "mean_abs_attribution": 0.026993727311491966,
+        "mean_signed_attribution": 0.02456808276474476,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000180596",
+        "mean_abs_attribution": 0.026787584647536278,
+        "mean_signed_attribution": -0.026415972039103508,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000116127",
+        "mean_abs_attribution": 0.024806933477520943,
+        "mean_signed_attribution": -0.024660654366016388,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000127481",
+        "mean_abs_attribution": 0.02407980151474476,
+        "mean_signed_attribution": -0.02353893406689167,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000127603",
+        "mean_abs_attribution": 0.02401704154908657,
+        "mean_signed_attribution": 0.023706644773483276,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000107036",
+        "mean_abs_attribution": 0.023225151002407074,
+        "mean_signed_attribution": -0.02273612655699253,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000173480",
+        "mean_abs_attribution": 0.021895086392760277,
+        "mean_signed_attribution": 0.021335840225219727,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000057468",
+        "mean_abs_attribution": 0.021647609770298004,
+        "mean_signed_attribution": -0.019813725724816322,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000135914",
+        "mean_abs_attribution": 0.02141631953418255,
+        "mean_signed_attribution": 0.020224908366799355,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000006715",
+        "mean_abs_attribution": 0.01967395842075348,
+        "mean_signed_attribution": 0.019047347828745842,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000188394",
+        "mean_abs_attribution": 0.019648101180791855,
+        "mean_signed_attribution": 0.01952963136136532,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000177932",
+        "mean_abs_attribution": 0.019408607855439186,
+        "mean_signed_attribution": 0.018222065642476082,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000127081",
+        "mean_abs_attribution": 0.018792234361171722,
+        "mean_signed_attribution": -0.018531566485762596,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000189114",
+        "mean_abs_attribution": 0.018467387184500694,
+        "mean_signed_attribution": -0.017735108733177185,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000155744",
+        "mean_abs_attribution": 0.01772450841963291,
+        "mean_signed_attribution": -0.016430126503109932,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000004534",
+        "mean_abs_attribution": 0.017471348866820335,
+        "mean_signed_attribution": 0.0158806461840868,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000100852",
+        "mean_abs_attribution": 0.01690998673439026,
+        "mean_signed_attribution": -0.016668571159243584,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000177058",
+        "mean_abs_attribution": 0.016439951956272125,
+        "mean_signed_attribution": 0.01563979499042034,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000176083",
+        "mean_abs_attribution": 0.01638559065759182,
+        "mean_signed_attribution": 0.011260907165706158,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000189144",
+        "mean_abs_attribution": 0.015658406540751457,
+        "mean_signed_attribution": 0.015159864909946918,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000115474",
+        "mean_abs_attribution": 0.015574268065392971,
+        "mean_signed_attribution": -0.015155109576880932,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000071564",
+        "mean_abs_attribution": 0.015410594642162323,
+        "mean_signed_attribution": 0.01426792610436678,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000171217",
+        "mean_abs_attribution": 0.01523562055081129,
+        "mean_signed_attribution": 0.015094096772372723,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000103202",
+        "mean_abs_attribution": 0.015065070241689682,
+        "mean_signed_attribution": -0.013617766089737415,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000039123",
+        "mean_abs_attribution": 0.015001780353486538,
+        "mean_signed_attribution": 0.014138319529592991,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000126005",
+        "mean_abs_attribution": 0.014734980650246143,
+        "mean_signed_attribution": -0.013757705688476562,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000121350",
+        "mean_abs_attribution": 0.014596104621887207,
+        "mean_signed_attribution": -0.01388681959360838,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000181007",
+        "mean_abs_attribution": 0.014585132710635662,
+        "mean_signed_attribution": 0.011526132933795452,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000187815",
+        "mean_abs_attribution": 0.014558711089193821,
+        "mean_signed_attribution": 0.011276870965957642,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000170113",
+        "mean_abs_attribution": 0.014464679174125195,
+        "mean_signed_attribution": -0.009602357633411884,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000184047",
+        "mean_abs_attribution": 0.01444392278790474,
+        "mean_signed_attribution": -0.013559802435338497,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000140749",
+        "mean_abs_attribution": 0.014412092976272106,
+        "mean_signed_attribution": 0.012483574450016022,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000172575",
+        "mean_abs_attribution": 0.014376039616763592,
+        "mean_signed_attribution": -0.01321981567889452,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000003393",
+        "mean_abs_attribution": 0.014269303530454636,
+        "mean_signed_attribution": -0.013652018271386623,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000166575",
+        "mean_abs_attribution": 0.014253966510295868,
+        "mean_signed_attribution": -0.012200559489428997,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000178567",
+        "mean_abs_attribution": 0.0141404764726758,
+        "mean_signed_attribution": 0.011357869021594524,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000183530",
+        "mean_abs_attribution": 0.0140523761510849,
+        "mean_signed_attribution": 0.013510134071111679,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000104953",
+        "mean_abs_attribution": 0.01400577649474144,
+        "mean_signed_attribution": 0.004769676830619574,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000163378",
+        "mean_abs_attribution": 0.01391418743878603,
+        "mean_signed_attribution": -0.011587475426495075,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000189013",
+        "mean_abs_attribution": 0.01385035365819931,
+        "mean_signed_attribution": 0.006266850978136063,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000089692",
+        "mean_abs_attribution": 0.013823561370372772,
+        "mean_signed_attribution": 0.011344592086970806,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000101421",
+        "mean_abs_attribution": 0.013764227740466595,
+        "mean_signed_attribution": -0.01315926294773817,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000133858",
+        "mean_abs_attribution": 0.013761150650680065,
+        "mean_signed_attribution": 0.013254426419734955,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000123297",
+        "mean_abs_attribution": 0.013511442579329014,
+        "mean_signed_attribution": 0.011972598731517792,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000106069",
+        "mean_abs_attribution": 0.013502765446901321,
+        "mean_signed_attribution": 0.01325294654816389,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000114113",
+        "mean_abs_attribution": 0.013426847755908966,
+        "mean_signed_attribution": 0.011434189975261688,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000166704",
+        "mean_abs_attribution": 0.01336156576871872,
+        "mean_signed_attribution": 0.011370561085641384,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000131849",
+        "mean_abs_attribution": 0.013203772716224194,
+        "mean_signed_attribution": 0.010940809734165668,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000173917",
+        "mean_abs_attribution": 0.013195320963859558,
+        "mean_signed_attribution": -0.006366225425153971,
+        "sign_consistency": 1.0
+      }
+    ],
+    "top_positive": [
+      {
+        "gene_id": "ENSG00000179909",
+        "mean_signed_attribution": 0.02456808276474476,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000127603",
+        "mean_signed_attribution": 0.023706644773483276,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000173480",
+        "mean_signed_attribution": 0.021335840225219727,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000135914",
+        "mean_signed_attribution": 0.020224908366799355,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000188394",
+        "mean_signed_attribution": 0.01952963136136532,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000006715",
+        "mean_signed_attribution": 0.019047347828745842,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000177932",
+        "mean_signed_attribution": 0.018222065642476082,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000004534",
+        "mean_signed_attribution": 0.0158806461840868,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000177058",
+        "mean_signed_attribution": 0.01563979499042034,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000189144",
+        "mean_signed_attribution": 0.015159864909946918,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000171217",
+        "mean_signed_attribution": 0.015094096772372723,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000071564",
+        "mean_signed_attribution": 0.01426792610436678,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000039123",
+        "mean_signed_attribution": 0.014138319529592991,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000183530",
+        "mean_signed_attribution": 0.013510134071111679,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000133858",
+        "mean_signed_attribution": 0.013254426419734955,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000106069",
+        "mean_signed_attribution": 0.01325294654816389,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000185278",
+        "mean_signed_attribution": 0.012669975869357586,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000140749",
+        "mean_signed_attribution": 0.012483574450016022,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000159915",
+        "mean_signed_attribution": 0.012210026383399963,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000123297",
+        "mean_signed_attribution": 0.011972598731517792,
+        "sign_consistency": 1.0
+      }
+    ],
+    "top_negative": [
+      {
+        "gene_id": "ENSG00000184270",
+        "mean_signed_attribution": -0.028487006202340126,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000180596",
+        "mean_signed_attribution": -0.026415972039103508,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000116127",
+        "mean_signed_attribution": -0.024660654366016388,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000127481",
+        "mean_signed_attribution": -0.02353893406689167,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000107036",
+        "mean_signed_attribution": -0.02273612655699253,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000057468",
+        "mean_signed_attribution": -0.019813725724816322,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000127081",
+        "mean_signed_attribution": -0.018531566485762596,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000189114",
+        "mean_signed_attribution": -0.017735108733177185,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000100852",
+        "mean_signed_attribution": -0.016668571159243584,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000155744",
+        "mean_signed_attribution": -0.016430126503109932,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000115474",
+        "mean_signed_attribution": -0.015155109576880932,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000121350",
+        "mean_signed_attribution": -0.01388681959360838,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000126005",
+        "mean_signed_attribution": -0.013757705688476562,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000003393",
+        "mean_signed_attribution": -0.013652018271386623,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000103202",
+        "mean_signed_attribution": -0.013617766089737415,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000184047",
+        "mean_signed_attribution": -0.013559802435338497,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000172575",
+        "mean_signed_attribution": -0.01321981567889452,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000101421",
+        "mean_signed_attribution": -0.01315926294773817,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000185689",
+        "mean_signed_attribution": -0.012449906207621098,
+        "sign_consistency": 1.0
+      },
+      {
+        "gene_id": "ENSG00000104093",
+        "mean_signed_attribution": -0.01244653481990099,
+        "sign_consistency": 1.0
+      }
+    ]
+  }
+}

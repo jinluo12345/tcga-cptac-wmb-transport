@@ -1,0 +1,17 @@
+{
+  "filepath": "paper/references.bib",
+  "total_entries": 57,
+  "cited_entries": 57,
+  "valid_entries": 57,
+  "errors": [],
+  "warnings": [],
+  "unused_entries": [],
+  "missing_entries": [],
+  "validated_against": "cited-key and BibTeX parse audit after final pruning",
+  "manuscript_citation_audit": {
+    "checked": true,
+    "cited_entries": 57,
+    "all_cited_keys_present": true
+  },
+  "date": "2026-10-05"
+}

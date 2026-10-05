@@ -1,0 +1,12 @@
+{
+  "checkpoint_source": "results/tmb_confirmatory_gpu/checkpoints",
+  "prediction_source": "results/tmb_confirmatory_gpu/external_predictions.csv",
+  "external_split": "held-out target evaluation only",
+  "preprocessing": "source development-train mean/std for each direction and seed",
+  "method": "gradient-times-input on final refit model",
+  "seeds": [
+    11,
+    23,
+    47
+  ]
+}

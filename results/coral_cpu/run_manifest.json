@@ -1,0 +1,11 @@
+{
+  "method": "PCA-HGB with CORAL source-to-unlabeled-target covariance alignment",
+  "target_split": "50/50 adaptation/evaluation random_state=seed+9000",
+  "preprocessing": "source-development-train mean/std and source-only PCA",
+  "target_labels_used_for_fit": false,
+  "seeds": [
+    11,
+    23,
+    47
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "accessed": "2026-10-05",
+  "seeds": [11, 23, 47],
+  "target_split": "50:50 unlabeled adaptation and disjoint evaluation; random_state=seed+9000",
+  "source_split": "80:20 source development/calibration; random_state=seed",
+  "source_refit": "all source patients, fixed 50-epoch budget",
+  "target_labels_used_for_fit": false,
+  "target_labels_used_for_calibration": false,
+  "target_labels_used_for_model_selection": false,
+  "gdc_projects": ["TCGA", "CPTAC-3"]
+}
