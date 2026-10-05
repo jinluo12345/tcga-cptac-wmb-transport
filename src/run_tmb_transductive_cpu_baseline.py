@@ -13,7 +13,7 @@ from sklearn.ensemble import HistGradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 
-ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data/processed_tmb'; OUT=ROOT/'results/tmb_transductive_cpu'; OUT.mkdir(parents=True,exist_ok=True)
+ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data/processed_tmb'; OUT=ROOT/'results/coral_cpu'; OUT.mkdir(parents=True,exist_ok=True)
 SEEDS=(11,23,47)
 
 def met(y,p):

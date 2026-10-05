@@ -1,10 +1,9 @@
 {
   "cpu_python_executable": ".venv/bin/python",
   "cpu_python_version": "3.11.14",
-  "cpu_environment": "experiments/environment.txt",
+  "cpu_environment": "metadata/environment.txt",
   "gpu_image": "docker.sii.shaipower.online/inspire-studio/dhyu-wan-torch29:0.4",
   "gpu_python": "/usr/bin/python in the platform image",
-  "gpu_torch_cuda": "validated by the platform preflight recorded in experiments/runs.json and results/tmb_confirmatory_gpu/run_manifest.json",
-  "gpu_driver_and_device": "platform-managed and recorded in job events; not required for CPU reproduction",
-  "note": "The CPU venv intentionally does not install torch; GPU scripts run only in the pinned platform image."
+  "gpu_torch_cuda": "validated by platform preflight; confirmatory run metadata is in results/confirmatory_gpu/run_manifest.json",
+  "protocol": "metadata/confirmatory_protocol.json"
 }

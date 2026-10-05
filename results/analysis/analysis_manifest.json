@@ -1,0 +1,13 @@
+{
+  "external_predictions": [
+    "results/tmb_confirmatory_gpu/external_predictions.csv",
+    "results/tmb_cpu_baselines/external_predictions.csv"
+  ],
+  "case_matching": "CPU rows restricted to confirmatory held-out case IDs",
+  "descriptive_summaries": "Repeated seed predictions collapsed to one mean prediction per unique case before lineage/error summaries",
+  "metrics": [
+    "stratified_metrics.csv",
+    "error_uncertainty_bins.csv",
+    "candidate_vs_hgb_by_seed.csv"
+  ]
+}

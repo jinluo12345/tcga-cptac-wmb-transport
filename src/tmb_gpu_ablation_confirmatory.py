@@ -14,7 +14,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from scipy.stats import spearmanr
 from tmb_gpu_ablation_corrected import MLPRegressor, AssayAwareHetero, HeteroNoDomain, AssayAwareHomo, gr
 
-ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data/processed_tmb'; OUT=ROOT/'results/tmb_ablation_confirmatory'; (OUT/'checkpoints').mkdir(parents=True,exist_ok=True)
+ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data/processed_tmb'; OUT=ROOT/'results/ablation'; (OUT/'checkpoints').mkdir(parents=True,exist_ok=True)
 SEEDS=(11,23,47); VARIANTS=('mlp_no_domain','hetero_no_domain','hetero_domain','homo_domain')
 
 def seed_all(s): random.seed(s); np.random.seed(s); torch.manual_seed(s); torch.cuda.manual_seed_all(s)
