@@ -1,6 +1,6 @@
 {
   "external_predictions": [
-    "results/tmb_confirmatory_gpu/external_predictions.csv",
+    "results/confirmatory_gpu/external_predictions.csv",
     "results/coral_cpu/external_predictions.csv"
   ],
   "case_matching": "CPU rows restricted to confirmatory held-out case IDs",
@@ -8,6 +8,6 @@
   "metrics": [
     "stratified_metrics.csv",
     "error_uncertainty_bins.csv",
-    "candidate_vs_hgb_by_seed.csv"
+    "candidate_vs_coral_by_seed.csv"
   ]
 }
