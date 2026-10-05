@@ -67,9 +67,9 @@ def fig_mechanism():
     fig.savefig(OUT/"figure1_mechanism.pdf",bbox_inches=None); fig.savefig(OUT/"figure1_mechanism.svg",bbox_inches=None); plt.close(fig)
 
 def fig_main():
-    d = pd.read_csv(ROOT/"results/tmb_confirmatory_gpu/metrics.csv")
+    d = pd.read_csv(ROOT/"results/confirmatory_gpu/metrics.csv")
     d = d[d.split.eq("external_holdout")].copy(); d["model"]="Assay-aware"
-    h = pd.read_csv(ROOT/"results/tmb_confirmatory_gpu/cpu_comparison.csv")
+    h = pd.read_csv(ROOT/"results/confirmatory_gpu/cpu_comparison.csv")
     fig = plt.figure(figsize=(7.2,5.4), constrained_layout=True)
     gs = GridSpec(2,2, figure=fig, hspace=.35, wspace=.28)
     ax = [fig.add_subplot(gs[0,0]), fig.add_subplot(gs[0,1]), fig.add_subplot(gs[1,0]), fig.add_subplot(gs[1,1])]
@@ -82,7 +82,7 @@ def fig_main():
             for dr in dirs:
                 if model=="Assay-aware": q=d[d.direction==dr][m]
                 elif model=="hgb": q=h[h.direction.eq(dr)&h.model.eq("hgb")][m]
-                else: q=pd.read_csv(ROOT/"results/tmb_transductive_cpu/metrics.csv").query("direction==@dr")[m]
+                else: q=pd.read_csv(ROOT/"results/coral_cpu/metrics.csv").query("direction==@dr")[m]
                 vals.append(q.mean()); errs.append(q.std())
             a.bar(x+(j-1)*w, vals, w, yerr=errs, capsize=2, color=col, label=label, edgecolor="white", linewidth=.5)
         a.set_xticks(x,labels); a.set_ylabel(lab); a.grid(axis="y",alpha=.2); a.set_title(lab)
@@ -91,7 +91,7 @@ def fig_main():
     save(fig,"figure2_main",ax)
 
 def fig_calibration():
-    p=pd.read_csv(ROOT/"results/tmb_confirmatory_gpu/external_predictions.csv")
+    p=pd.read_csv(ROOT/"results/confirmatory_gpu/external_predictions.csv")
     # Collapse the repeated seed predictions to one descriptive estimate per
     # held-out case before plotting calibration or error strata.
     p=p.groupby(["direction","case_id","lineage"],as_index=False).agg(
@@ -120,19 +120,19 @@ def fig_attribution():
     fig=plt.figure(figsize=(7.2,5.4), constrained_layout=True); gs=GridSpec(2,2,figure=fig,hspace=.38,wspace=.34)
     ax=[fig.add_subplot(gs[0,0]),fig.add_subplot(gs[0,1]),fig.add_subplot(gs[1,0]),fig.add_subplot(gs[1,1])]
     for a,(direction,label) in zip(ax[:2],[("TCGA_to_CPTAC","TCGA→CPTAC"),("CPTAC_to_TCGA","CPTAC→TCGA")]):
-        d=pd.read_csv(ROOT/f"results/tmb_attribution/{direction}_gene_importance.csv").head(10).sort_values("mean_abs_attribution")
+        d=pd.read_csv(ROOT/f"results/attribution/{direction}_gene_importance.csv").head(10).sort_values("mean_abs_attribution")
         gene_col="gene_symbol" if "gene_symbol" in d.columns else "gene_id"
         a.barh(d[gene_col],d.mean_abs_attribution,color=BLUE); a.set_xlabel("Mean |gradient × input|"); a.set_title(label); a.grid(axis="x",alpha=.2)
-    sm=pd.read_json(ROOT/"results/tmb_attribution/summary.json",orient="index") if False else None
+    sm=pd.read_json(ROOT/"results/attribution/summary.json",orient="index") if False else None
     # Directional rank concordance is computed from saved tables, retaining only shared genes.
     tabs=[]
     for i,x in enumerate(['TCGA_to_CPTAC','CPTAC_to_TCGA']):
-        z=pd.read_csv(ROOT/f"results/tmb_attribution/{x}_gene_importance.csv")
+        z=pd.read_csv(ROOT/f"results/attribution/{x}_gene_importance.csv")
         gene_col="gene_symbol" if "gene_symbol" in z.columns else "gene_id"
         tabs.append(z[[gene_col,'rank']].rename(columns={gene_col:'gene', 'rank':f'rank_{i}'}))
     a,b=tabs
     m=a.merge(b,on='gene'); ax[2].scatter(m.rank_0,m.rank_1,s=8,alpha=.35,color=TEAL); ax[2].set(xlabel="TCGA→CPTAC rank",ylabel="CPTAC→TCGA rank",title=f"Gene-rank concordance (n={len(m):,})"); ax[2].grid(alpha=.2)
-    strat=pd.read_csv(ROOT/"results/tmb_analysis/error_uncertainty_bins.csv"); strat=strat[strat.model.eq("assay_aware_refit")]
+    strat=pd.read_csv(ROOT/"results/analysis/error_uncertainty_bins.csv"); strat=strat[strat.model.eq("assay_aware_refit")]
     labels_added=[]
     for direction,color,label in [("TCGA_to_CPTAC",BLUE,"TCGA→CPTAC"),("CPTAC_to_TCGA",ORANGE,"CPTAC→TCGA")]:
         q=strat[(strat.direction.eq(direction)) & (strat.stratum.eq("true_q"))].copy(); q=q.sort_values("level"); ax[3].plot(np.arange(len(q)),q.mae,"o-",color=color)
@@ -142,7 +142,7 @@ def fig_attribution():
     save(fig,"figure5_attribution",ax)
 
 def fig_ablation():
-    d=pd.read_csv(ROOT/"results/tmb_ablation_confirmatory/metrics.csv")
+    d=pd.read_csv(ROOT/"results/ablation/metrics.csv")
     g=d.groupby(["evaluation","direction","variant"])[["rmse","mae","spearman","r2"]].mean().reset_index()
     fig=plt.figure(figsize=(7.2,5.4), constrained_layout=True); gs=GridSpec(2,2,figure=fig,hspace=.35,wspace=.30); ax=[fig.add_subplot(gs[0,0]),fig.add_subplot(gs[0,1]),fig.add_subplot(gs[1,0]),fig.add_subplot(gs[1,1])]
     variants=["hetero_domain","hetero_no_domain","homo_domain","mlp_no_domain"]

@@ -20,7 +20,7 @@ from scipy.stats import spearmanr
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data' / 'processed_tmb'
-OUT = ROOT / 'results' / 'tmb_confirmatory_gpu'
+OUT = ROOT / 'results' / 'confirmatory_gpu'
 (OUT / 'checkpoints').mkdir(parents=True, exist_ok=True)
 
 

@@ -3,10 +3,10 @@ import json, numpy as np, pandas as pd
 from scipy.stats import spearmanr
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-ROOT=Path(__file__).resolve().parents[1]; out=ROOT/'results/analysis'; out.mkdir(parents=True,exist_ok=True)
-gpu=pd.read_csv(ROOT/'results/confirmatory_gpu/external_predictions.csv')
+ROOT=Path(__file__).resolve().parents[1]; out=ROOT/'results/tmb_analysis'; out.mkdir(parents=True,exist_ok=True)
+gpu=pd.read_csv(ROOT/'results/tmb_confirmatory_gpu/external_predictions.csv')
 gpu['model']='assay_aware_refit'
-cpu_path=ROOT/'results/coral_cpu/external_predictions.csv'
+cpu_path=ROOT/'results/tmb_transductive_cpu/external_predictions.csv'
 cpu_all=pd.read_csv(cpu_path)
 # Restrict every CPU baseline to exactly the held-out target IDs used by the confirmatory run.
 ids=gpu[['direction','seed','case_id']]
@@ -58,5 +58,5 @@ for (d,s),a in gpu.groupby(['direction','seed']):
  rows.append({'direction':d,'seed':int(s),'n':len(z),'rmse_candidate':np.sqrt(mean_squared_error(y,pc)),'rmse_baseline':np.sqrt(mean_squared_error(y,pb)),'mae_candidate':mean_absolute_error(y,pc),'mae_baseline':mean_absolute_error(y,pb),'spearman_candidate':spearmanr(y,pc).statistic,'spearman_baseline':spearmanr(y,pb).statistic,'r2_candidate':r2_score(y,pc),'r2_baseline':r2_score(y,pb)})
 delta=pd.DataFrame(rows); delta['rmse_improvement']=delta.rmse_baseline-delta.rmse_candidate; delta['mae_improvement']=delta.mae_baseline-delta.mae_candidate; delta['spearman_improvement']=delta.spearman_candidate-delta.spearman_baseline; delta['r2_improvement']=delta.r2_candidate-delta.r2_baseline
 delta.to_csv(out/'candidate_vs_coral_by_seed.csv',index=False)
-(out/'analysis_manifest.json').write_text(json.dumps({'external_predictions':['results/confirmatory_gpu/external_predictions.csv','results/coral_cpu/external_predictions.csv'],'case_matching':'CPU rows restricted to confirmatory held-out case IDs','descriptive_summaries':'Repeated seed predictions collapsed to one mean prediction per unique case before lineage/error summaries','metrics':['stratified_metrics.csv','error_uncertainty_bins.csv','candidate_vs_coral_by_seed.csv']},indent=2))
+(out/'analysis_manifest.json').write_text(json.dumps({'external_predictions':['results/tmb_confirmatory_gpu/external_predictions.csv','results/tmb_cpu_baselines/external_predictions.csv'],'case_matching':'CPU rows restricted to confirmatory held-out case IDs','descriptive_summaries':'Repeated seed predictions collapsed to one mean prediction per unique case before lineage/error summaries','metrics':['stratified_metrics.csv','error_uncertainty_bins.csv','candidate_vs_coral_by_seed.csv']},indent=2))
 print(pd.read_csv(out/'stratified_metrics.csv').query("stratum=='overall'").to_string(index=False))

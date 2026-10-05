@@ -19,7 +19,7 @@ from scipy.stats import spearmanr
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "processed_tmb"
-OUT = ROOT / "results" / "tmb_ablation_corrected"
+OUT = ROOT / "results" / "ablation""
 (OUT / "checkpoints").mkdir(parents=True, exist_ok=True)
 
 
