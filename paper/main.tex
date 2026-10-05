@@ -219,6 +219,15 @@ The confirmatory protocol was fixed before target labels were consumed for scori
 \subsection{Additional uncertainty summaries}
 Besides nominal coverage, we report interval width, calibration slope and intercept, bias, and error in predicted-scale quartiles. Coverage is computed on individual patients and is not a confidence interval for the population mean. Bootstrap intervals quantify uncertainty in paired metric differences by resampling patients within a fixed external direction and seed. They do not account for uncertainty in the data-generation process or for possible dependence among patients from the same study. We therefore use them as a descriptive complement to the multi-seed comparison rather than as a formal hypothesis test of all possible cohorts.
 
+\section*{Ethics statement}
+This computational analysis used de-identified, publicly available TCGA and CPTAC molecular records accessed through the Genomic Data Commons. No participants were recruited, contacted, or re-identified for this study; source-consortium access and data-use terms apply.
+
+\section*{Competing interests}
+The authors declare no competing interests.
+
+\section*{Author contributions}
+Author names and contribution assignments will be completed in the submission metadata.
+
 \section{Data and code availability}
 The study uses publicly available TCGA and CPTAC molecular data accessed through the NCI Genomic Data Commons (TCGA project: \url{https://portal.gdc.cancer.gov/projects/TCGA}; CPTAC-3 project: \url{https://portal.gdc.cancer.gov/projects/CPTAC-3}; GDC documentation: \url{https://docs.gdc.cancer.gov/}). Queries and file manifests were frozen on 2026-10-05. Code, derived labels, split identifiers, prediction tables, figure sources, checksums, and manuscript source are archived at \url{https://github.com/jinluo12345/tcga-cptac-wmb-transport}; raw controlled-access files are not redistributed. Model weights can be regenerated from the fixed seeds and source-only preprocessing. No DOI is assigned.
 

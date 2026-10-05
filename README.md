@@ -9,3 +9,5 @@ Public data sources: TCGA (https://portal.gdc.cancer.gov/projects/TCGA), CPTAC-3
 The archive includes a frozen Python environment description, runtime metadata, citation audit, split IDs, checksums, and per-seed prediction tables. Raw controlled-access files are not redistributed.
 
 Permanent public repository: https://github.com/jinluo12345/tcga-cptac-wmb-transport. No DOI is assigned; repository history and release checksums identify this version.
+
+Reproduction entry points are under `src/`. Run the CPU control and analysis from the repository root with the frozen environment in `metadata/environment.txt`; the GPU scripts require the pinned image described in `metadata/runtime_manifest.json`. To reconstruct labels after obtaining the open masked WXS MAF files from GDC, run `src/derive_wmb_labels.py --maf-root <directory containing file_id.maf.gz>`. The exact WXS file manifest and variant-class filter are in `metadata/wxs_maf_manifest.json` and `metadata/wmb_label_audit.md`. The release includes the derived expression panel and sample metadata used by the confirmatory models. Code is MIT licensed; GDC data remain subject to their source terms.
