@@ -1,6 +1,6 @@
 # Cross-cohort WXS mutation-burden prediction
 
-This archive contains the authoritative confirmatory manuscript, code, derived results, figures, and split case IDs for the two-way TCGA/CPTAC batch-transductive WMB study. This release is `v1.0.14-confirmatory`.
+This archive contains the authoritative confirmatory manuscript, code, derived results, figures, and split case IDs for the two-way TCGA/CPTAC batch-transductive WMB study. This release is `v1.0.15-confirmatory`.
 
 The endpoint is the log1p count of deduplicated non-synonymous variants from open masked WXS calls. It is not callable-territory-normalized clinical TMB. The assay-aware model uses source labels and an unlabeled target adaptation batch; target evaluation cases are disjoint and target labels are used only for final scoring. The CORAL-PCA-HGB control receives the same unlabeled adaptation batch.
 
