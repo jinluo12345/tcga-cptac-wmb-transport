@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results" / "figures"
@@ -56,7 +57,8 @@ def fig_mechanism():
     box(7.7,2.35,1.9,1.4,"Predicted\nlog1p WMB\n+ 90% interval","#EAF2F8",ec=BLUE)
     box(5.25,.35,1.8,0.85,"Gradient reversal\n+ domain head", "#FDE9D9",ec=ORANGE,fs=8)
     arrow(1.95,3.65,2.55,3.05)
-    arrow(1.95,1.5,5.25,.75,"domain label", "--")
+    arrow(1.95,1.5,5.25,.75,None, "--")
+    ax.text(3.45,1.78,"cohort label",ha="center",va="center",fontsize=7,color="#374151")
     arrow(4.55,3.05,5.25,3.55)
     arrow(4.55,2.75,5.25,2.25)
     arrow(7.05,3.55,7.7,3.25)
@@ -70,8 +72,11 @@ def fig_main():
     d = pd.read_csv(ROOT/"results/confirmatory_gpu/metrics.csv")
     d = d[d.split.eq("external_holdout")].copy(); d["model"]="Assay-aware"
     h = pd.read_csv(ROOT/"results/confirmatory_gpu/cpu_comparison.csv")
-    fig = plt.figure(figsize=(7.2,5.4), constrained_layout=True)
+    c = pd.read_csv(ROOT/"results/coral_cpu/metrics.csv")
+    boot = pd.DataFrame(json.loads((ROOT/"results/analysis/bootstrap_comparison.json").read_text()))
+    fig = plt.figure(figsize=(7.2,5.4), constrained_layout=False)
     gs = GridSpec(2,2, figure=fig, hspace=.35, wspace=.28)
+    fig.subplots_adjust(left=.10, right=.98, bottom=.10, top=.82, hspace=.42, wspace=.28)
     ax = [fig.add_subplot(gs[0,0]), fig.add_subplot(gs[0,1]), fig.add_subplot(gs[1,0]), fig.add_subplot(gs[1,1])]
     metrics = [("rmse","RMSE (log1p WMB)"),("mae","MAE (log1p WMB)"),("spearman","Spearman ρ"),("r2","R²")]
     dirs=["TCGA_to_CPTAC","CPTAC_to_TCGA"]; labels=["TCGA→CPTAC","CPTAC→TCGA"]
@@ -82,12 +87,37 @@ def fig_main():
             for dr in dirs:
                 if model=="Assay-aware": q=d[d.direction==dr][m]
                 elif model=="hgb": q=h[h.direction.eq(dr)&h.model.eq("hgb")][m]
-                else: q=pd.read_csv(ROOT/"results/coral_cpu/metrics.csv").query("direction==@dr")[m]
+                else: q=c.query("direction==@dr")[m]
                 vals.append(q.mean()); errs.append(q.std())
             a.bar(x+(j-1)*w, vals, w, yerr=errs, capsize=2, color=col, label=label, edgecolor="white", linewidth=.5)
+            # Show the three fixed-seed values as points, preserving the unit
+            # of replication used by the error bars.
+            for k, dr in enumerate(dirs):
+                if model=="Assay-aware": q=d[d.direction.eq(dr)][m].to_numpy()
+                elif model=="hgb": q=h[h.direction.eq(dr)&h.model.eq("hgb")][m].to_numpy()
+                else: q=c.query("direction==@dr")[m].to_numpy()
+                a.scatter(np.repeat(x[k]+(j-1)*w, len(q)), q, s=14, color="#111827", zorder=4, clip_on=False)
         a.set_xticks(x,labels); a.set_ylabel(lab); a.grid(axis="y",alpha=.2); a.set_title(lab)
-    ax[0].legend(frameon=False, loc="upper center", bbox_to_anchor=(1.05,1.28), ncol=2)
-    fig.suptitle("Confirmatory held-out performance across fixed seeds (mean ± SD)", fontsize=11, fontweight="bold")
+        # Compact paired-difference inset: candidate minus CORAL-PCA-HGB,
+        # with patient-bootstrap 95% intervals for each direction.
+        ia = inset_axes(a, width="42%", height="29%", loc="upper right", borderpad=1.0)
+        ia.set_facecolor("white")
+        ia.set_zorder(10)
+        ix = np.arange(2)
+        metric_idx = {"rmse": 0, "mae": 1, "spearman": 2, "r2": 3}[m]
+        for k, dr in enumerate(dirs):
+            q = boot[boot.direction.eq(dr)]
+            vals = q[f"delta_{m}"].to_numpy(float)
+            ci = np.asarray([json.loads(z) if isinstance(z, str) else z for z in q.bootstrap_ci95], dtype=float)
+            lo = ci[:, 0, metric_idx].mean(); hi = ci[:, 1, metric_idx].mean(); center = vals.mean()
+            ia.errorbar(center, k, xerr=[[center-lo], [hi-center]], fmt="o", color=BLUE, capsize=2, ms=3)
+        ia.axvline(0, color=GREY, ls="--", lw=.7)
+        ia.set_yticks(ix, ["T→C", "C→T"], fontsize=5.5)
+        ia.set_xticks([]); ia.set_yticks([])
+        ia.grid(False)
+    handles, labels = ax[0].get_legend_handles_labels()
+    fig.legend(handles, labels, frameon=False, loc="upper center", bbox_to_anchor=(0.5,0.965), ncol=3)
+    fig.suptitle("Confirmatory held-out performance across fixed seeds", fontsize=11, fontweight="bold", y=.995)
     save(fig,"figure2_main",ax)
 
 def fig_calibration():
@@ -102,10 +132,8 @@ def fig_calibration():
         q=p[p.direction.eq(direction)].copy(); q["bin"]=pd.qcut(q["true"],4,duplicates="drop")
         g=q.groupby("bin",observed=True).agg(y=("true","mean"),pred=("pred","mean"),scale=("scale","mean"),n=("true","size")).reset_index()
         a.errorbar(g.y,g.pred,yerr=1.64485*g.scale,fmt="o",color=BLUE,capsize=2)
-        for _,r in g.iterrows():
-            a.annotate(f"n={int(r.n)}",(r.y,r.pred),xytext=(3,4),textcoords="offset points",fontsize=6,color="#374151")
         lo=min(g.y.min(),g.pred.min()); hi=max(g.y.max(),g.pred.max()); a.plot([lo,hi],[lo,hi],"--",color=GREY,lw=1)
-        a.set(xlabel="Observed log1p WMB (bin mean)",ylabel="Predicted log1p WMB",title=f"{label}: calibration bins"); a.grid(alpha=.2)
+        a.set(xlabel="Observed log1p WMB (bin mean)",ylabel="Predicted log1p WMB",title=f"{label}: calibration bins (n={len(q):,})"); a.grid(alpha=.2)
     for a,(direction,label) in zip(ax[2:],[("TCGA_to_CPTAC","TCGA→CPTAC"),("CPTAC_to_TCGA","CPTAC→TCGA")]):
         q=p[p.direction.eq(direction)].copy(); q["abs_err"]=(q.true-q.pred).abs(); q["q"]=pd.qcut(q.true,4,labels=["Q1","Q2","Q3","Q4"])
         g=q.groupby("q",observed=False).agg(mae=("abs_err","mean"),coverage=("abs_err",lambda x: np.nan)).reset_index()
@@ -144,7 +172,7 @@ def fig_attribution():
 def fig_ablation():
     d=pd.read_csv(ROOT/"results/ablation/metrics.csv")
     g=d.groupby(["evaluation","direction","variant"])[["rmse","mae","spearman","r2"]].mean().reset_index()
-    fig=plt.figure(figsize=(7.2,5.4), constrained_layout=True); gs=GridSpec(2,2,figure=fig,hspace=.35,wspace=.30); ax=[fig.add_subplot(gs[0,0]),fig.add_subplot(gs[0,1]),fig.add_subplot(gs[1,0]),fig.add_subplot(gs[1,1])]
+    fig=plt.figure(figsize=(7.2,5.4), constrained_layout=False); gs=GridSpec(2,2,figure=fig,hspace=.35,wspace=.30); fig.subplots_adjust(left=.10,right=.98,bottom=.10,top=.82,hspace=.40,wspace=.30); ax=[fig.add_subplot(gs[0,0]),fig.add_subplot(gs[0,1]),fig.add_subplot(gs[1,0]),fig.add_subplot(gs[1,1])]
     variants=["hetero_domain","hetero_no_domain","homo_domain","mlp_no_domain"]
     short=["full","no-align","homo","MLP"]
     dirs=["TCGA_to_CPTAC","CPTAC_to_TCGA"]
@@ -164,9 +192,9 @@ def fig_ablation():
                        linestyle="none",color="#222222",alpha=.9,
                        label=f"{ev} ({dl})" if (metric=="rmse" and j==0) else None)
         a.set_xticks(x,short); a.set_ylabel(label); a.set_xlabel(""); a.tick_params(axis="x",labelsize=7); a.grid(axis="y",alpha=.2)
-        if metric=="rmse":
-            a.legend(frameon=False,fontsize=6,ncol=2,loc="upper left")
-    fig.suptitle("Ablation on clean target cases with evaluation-only perturbations",fontsize=11,fontweight="bold")
+    handles, labels = ax[0].get_legend_handles_labels()
+    fig.legend(handles, labels, frameon=False, fontsize=6, ncol=3, loc="upper center", bbox_to_anchor=(0.5,0.965))
+    fig.suptitle("Ablation on clean target cases with evaluation-only perturbations",fontsize=11,fontweight="bold",y=.995)
     save(fig,"figure3_ablation",ax)
 
 if __name__=="__main__":

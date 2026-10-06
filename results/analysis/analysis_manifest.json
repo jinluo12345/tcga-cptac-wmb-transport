@@ -8,6 +8,8 @@
   "metrics": [
     "stratified_metrics.csv",
     "error_uncertainty_bins.csv",
-    "candidate_vs_coral_by_seed.csv"
-  ]
+    "candidate_vs_coral_by_seed.csv",
+    "bootstrap_comparison.json"
+  ],
+  "bootstrap": "2000 patient resamples within each fixed direction-seed evaluation set; candidate minus CORAL-PCA-HGB"
 }

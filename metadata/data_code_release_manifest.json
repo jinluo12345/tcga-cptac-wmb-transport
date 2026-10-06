@@ -1,6 +1,6 @@
 {
-  "release_tag": "v1.0.11-confirmatory",
-  "release_url": "https://github.com/jinluo12345/tcga-cptac-wmb-transport/releases/tag/v1.0.11-confirmatory",
+  "release_tag": "v1.0.12-confirmatory",
+  "release_url": "https://github.com/jinluo12345/tcga-cptac-wmb-transport/releases/tag/v1.0.12-confirmatory",
   "public_archive": "https://github.com/jinluo12345/tcga-cptac-wmb-transport",
   "doi": null,
   "data_sources": {
@@ -22,7 +22,8 @@
     "results/ablation",
     "results/attribution",
     "results/figures",
-    "results/split_case_ids.csv"
+    "results/split_case_ids.csv",
+    "results/analysis"
   ],
   "source_scripts": [
     "src/tmb_gpu_refit.py",
@@ -31,11 +32,24 @@
     "src/tmb_attribution.py",
     "src/run_tmb_transductive_cpu_baseline.py",
     "src/analyze_tmb_results.py",
-    "src/plot_tmb_figures.py"
+    "src/plot_tmb_figures.py",
+    "src/reproduce_cpu.sh",
+    "src/bootstrap_tmb_comparison.py"
   ],
   "environment": "metadata/environment.txt",
   "runtime": "metadata/runtime_manifest.json",
   "reference_audit": "metadata/reference_validation_final.json",
   "checksums": "SHA256SUMS",
-  "controlled_access_files_not_redistributed": true
+  "confirmatory_checksums": "metadata/confirmatory_checksums.sha256",
+  "controlled_access_files_not_redistributed": true,
+  "metadata_files": [
+    "metadata/confirmatory_protocol.json",
+    "metadata/decision_ledger.md",
+    "metadata/environment.txt",
+    "metadata/runtime_manifest.json",
+    "metadata/reference_validation_final.json",
+    "metadata/wxs_maf_manifest.json",
+    "metadata/wmb_label_audit.md",
+    "metadata/confirmatory_checksums.sha256"
+  ]
 }
